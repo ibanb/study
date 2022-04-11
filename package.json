@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/ibanb/study/issues"
   },
-  "homepage": "https://github.com/ibanb/study#readme"
+  "homepage": "https://github.com/ibanb/study#readme",
+  "dependencies": {
+    "commander": "^9.1.0",
+    "lodash": "^4.17.21"
+  }
 }
