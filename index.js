@@ -1,21 +1,23 @@
 
-function uniq(str) {
+// Плоский массив (flatten)
 
-  const scopeChars = {}
-    String(str).split('').map((char) => {
-    if (scopeChars[char]) {
-      scopeChars[char] += 1
+const flatten = (arr) => {
+
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      // ключевая строчка, здесь происходит рекурсия
+      const flat = flatten(arr[i]);
+      for (let j = 0; j < flat.length; j++) {
+        result.push(flat[j]);
+      }
     } else {
-      scopeChars[char] = 1
+      result.push(arr[i]);
     }
-  })
+  }
 
-  const result = Object.values(scopeChars)
-    .filter(item => item > 1)
-  // return new Set(String(str) === str.length));
-  // самый простой способ
-  return result.length === 0
+  return result;
 }
 
-
-console.log(uniq(1223456));
+console.log(flatten([1, 2, 3, [1, 2], [1, [1]]]));
