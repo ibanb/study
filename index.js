@@ -2,7 +2,7 @@
 function uniq(str) {
 
   const scopeChars = {}
-  str.split('').map((char) => {
+    String(str).split('').map((char) => {
     if (scopeChars[char]) {
       scopeChars[char] += 1
     } else {
@@ -17,4 +17,4 @@ function uniq(str) {
 }
 
 
-console.log(uniq('tesing'));
+console.log(uniq(1223456));
