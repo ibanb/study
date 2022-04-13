@@ -12,7 +12,8 @@ function uniq(str) {
 
   const result = Object.values(scopeChars)
     .filter(item => item > 1)
-
+  // return new Set(String(str) === str.length));
+  // самый простой способ
   return result.length === 0
 }
 
