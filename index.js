@@ -1,17 +1,20 @@
 
-function printNumber(from, to) {
+function uniq(str) {
 
-  const delay = 1000;
-  const timerId = setTimeout(function run() {
-    from = from + 1;
-    console.log(from);
-
-    if (from === to) {
-     clearTimeout(timerId);
+  const scopeChars = {}
+  str.split('').map((char) => {
+    if (scopeChars[char]) {
+      scopeChars[char] += 1
     } else {
-     setTimeout(run, delay);
+      scopeChars[char] = 1
     }
-  }, delay);
+  })
+
+  const result = Object.values(scopeChars)
+    .filter(item => item > 1)
+
+  return result.length === 0
 }
 
-printNumber(3, 10);
+
+console.log(uniq('tesing'));
