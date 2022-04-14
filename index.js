@@ -1,18 +1,19 @@
 
-// Удаление повторяющихся символов в строке
+// Подмножество массива
 
-const keepUniqChars = (str) => {
+const contains = (where, what) => {
 
-  const stack = []
+  let result = true
 
-  str.split('').forEach(char => {
-    if (!stack.includes(char)) {
-      stack.push(char)
+  what.map(item => {
+    if (!where.includes(item)) {
+      result = false
     }
   })
-  console.log(stack)
+
+  return result
 }
 
+console.log(contains([1, 2, 3, 4], [1, 2, 5]))
 
-keepUniqChars('abcdabcd')
 
