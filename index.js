@@ -1,23 +1,18 @@
 
-// Плоский массив (flatten)
+// Удаление повторяющихся символов в строке
 
-const flatten = (arr) => {
+const keepUniqChars = (str) => {
 
-  const result = [];
+  const stack = []
 
-  for (let i = 0; i < arr.length; i++) {
-    if (Array.isArray(arr[i])) {
-      // ключевая строчка, здесь происходит рекурсия
-      const flat = flatten(arr[i]);
-      for (let j = 0; j < flat.length; j++) {
-        result.push(flat[j]);
-      }
-    } else {
-      result.push(arr[i]);
+  str.split('').forEach(char => {
+    if (!stack.includes(char)) {
+      stack.push(char)
     }
-  }
-
-  return result;
+  })
+  console.log(stack)
 }
 
-console.log(flatten([1, 2, 3, [1, 2], [1, [1]]]));
+
+keepUniqChars('abcdabcd')
+
