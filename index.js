@@ -43,17 +43,13 @@
 
 // --------------------------------------------
 /*
-function arraySubset(source, subset) {
-  if (source.length < subset.length) {
-    return false
-  }
+function allAnagrams(array) {
+  const sorted = array.map(str => str.split('').sort().join(''))
 
-  for (let i = 0; i < subset.length; i++) {
-    const index = source.indexOf(subset[i])
-    if (index === -1) {
+  for (let i = 1; i < sorted.length; i++) {
+    if (sorted[i] !== sorted[0]) {
       return false
     }
-    delete source[index]
   }
   return true
 }
