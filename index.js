@@ -43,20 +43,26 @@
 
 // --------------------------------------------
 /*
-function removeDupes(str) {
-   const chars = {}
-   const res = []
+function highestFrequency(array) {
+  const map = {}
+  let maxFreq = 0
+  let maxFreqStr = array[0]
 
-   for (let i = 0; i < str.length; i++) {
-     if (!chars[str[i]]) {
-       chars[str[i]] = true
-       res.push(str[i])
-     }
-   }
+  for (let i = 0; i < array.length; i++) {
+    const current = array[i]
 
-   return res.join('')
+    if (map[current]) {
+      map[current]++
+    } else {
+      map[current] = 1
+    }
 
-  return Array.from(new Set(str)).join('')
+    if (map[current] > maxFreq) {
+      maxFreq = map[current]
+      maxFreqStr = current
+    }
+  }
+
+  return maxFreqStr
 }
 */
-
