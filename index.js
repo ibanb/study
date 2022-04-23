@@ -43,20 +43,18 @@
 
 // --------------------------------------------
 /*
-function isStringRotated(source, test) {
-  if (source.length !== test.length) {
+function arraySubset(source, subset) {
+  if (source.length < subset.length) {
     return false
   }
-  
-  for (let i = 0; i < source.length; i++) {
-    const rotate = source.slice(i, source.length) + source.slice(0, i)
-  
-    if (rotate === test) {
-      return true
+
+  for (let i = 0; i < subset.length; i++) {
+    const index = source.indexOf(subset[i])
+    if (index === -1) {
+      return false
     }
+    delete source[index]
   }
-  
-  return false
-  //return source.length === test.length && (source + source).includes(test)
+  return true
 }
 */
