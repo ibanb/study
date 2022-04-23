@@ -43,19 +43,17 @@
 
 // --------------------------------------------
 /*
-function fibonacci(n) {
-  const sequence = [1, 1]
-
-  if (n < 2) {
-    return sequence.slice(0, n)
+Function.prototype.myBind = function(context, ...args) {
+  return (...rest) => {
+    return this.call(context, ...args.concat(rest))
   }
-
-  while (sequence.length < n) {
-    const last = sequence[sequence.length - 1]
-    const prev = sequence[sequence.length - 2]
-    sequence.push(last + prev)
-  }
-
-  return sequence
 }
+
+function log(...props) {
+  console.log(this.name, this.age, ...props)
+}
+
+const obj = {name: 'Vladilen', age: 28}
+
+log.myBind(obj, 1, 2)()
 */
