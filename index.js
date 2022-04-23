@@ -43,17 +43,17 @@
 
 // --------------------------------------------
 /*
-Function.prototype.myBind = function(context, ...args) {
-  return (...rest) => {
-    return this.call(context, ...args.concat(rest))
+function add(a, b) {
+  if (!a) {
+    return add
   }
+  if (!b) {
+    return function calc(c) {
+      if (!c) return calc
+      return a + c
+    }
+  }
+
+  return a + b
 }
-
-function log(...props) {
-  console.log(this.name, this.age, ...props)
-}
-
-const obj = {name: 'Vladilen', age: 28}
-
-log.myBind(obj, 1, 2)()
 */
