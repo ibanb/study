@@ -1,8 +1,66 @@
-// анаграмма 2
 
-const anagram = (data) => {
 
-  return data.map(item => item.split('').sort().join(''))
-  .filter(item => item !== data[0]).length === 0
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --------------------------------------------
+//function isUnique(str) {
+  // for (let i = 0; i < str.length; i++) {
+  //   if (str.lastIndexOf(str[i]) !== i) {
+  //     return false
+  //   }
+  // }
+  // return true
+  // const chars = new Set()
+  
+  // for (let i = 0; i < str.length; i++) {
+  //   const current = str[i]
+  
+  //   if (chars.has(current)) {
+  //     return false
+  //   }
+  
+  //   chars.add(current)
+  // }
+  // return true
+//  return new Set(str).size === str.length
+//}
 
