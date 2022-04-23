@@ -43,30 +43,19 @@
 
 // --------------------------------------------
 /*
-function deepEqual(a, b) {
-  if (Number.isNaN(a) && Number.isNaN(b)) {
-    return true
+function fibonacci(n) {
+  const sequence = [1, 1]
+
+  if (n < 2) {
+    return sequence.slice(0, n)
   }
 
-
-  if (typeof a !== typeof b) {
-    return false
+  while (sequence.length < n) {
+    const last = sequence[sequence.length - 1]
+    const prev = sequence[sequence.length - 2]
+    sequence.push(last + prev)
   }
 
-  if (typeof a !== 'object' || a === null || b === null) {
-    return a === b
-  }
-
-  if (Object.keys(a).length !== Object.keys(b).length) {
-    return false
-  }
-
-  for (const key of Object.keys(a)) {
-    if (!deepEqual(a[key], b[key])) {
-      return false
-    }
-  }
-
-  return true
+  return sequence
 }
 */
