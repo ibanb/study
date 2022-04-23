@@ -43,17 +43,16 @@
 
 // --------------------------------------------
 /*
-function add(a, b) {
-  if (!a) {
-    return add
-  }
-  if (!b) {
-    return function calc(c) {
-      if (!c) return calc
-      return a + c
-    }
-  }
+function groupBy(array, fn) {
+  return array.reduce((res, current) => {
+    const key = typeof fn === 'function' ? fn(current) : current[fn]
 
-  return a + b
+    if (!res[key]) {
+      res[key] = []
+    }
+    res[key].push(current)
+
+    return res
+  }, {})
 }
 */
