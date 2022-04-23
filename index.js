@@ -43,30 +43,20 @@
 
 // --------------------------------------------
 /*
-function flatten(array) {
-  const res = []
+function removeDupes(str) {
+   const chars = {}
+   const res = []
 
-  for (let i = 0; i < array.length; i++) {
-    if (Array.isArray(array[i])) {
-      const flat = flatten(array[i])
-      for (let j = 0; j < flat.length; j++) {
-        res.push(flat[j])
-      }
-    } else {
-      res.push(array[i])
-    }
-  }
+   for (let i = 0; i < str.length; i++) {
+     if (!chars[str[i]]) {
+       chars[str[i]] = true
+       res.push(str[i])
+     }
+   }
 
-  return res
+   return res.join('')
+
+  return Array.from(new Set(str)).join('')
 }
-*/
-// ----------------------
-/* 
-const flatten = (arr) => {
-  const result = arr.reduce((flat, toFlatten) => {
-    return flat.concat((Array.isArray(toFlatten)) ? flatten(toFlatten) : toFlatten);
-  }, []);
-  return result;
-};
 */
 
