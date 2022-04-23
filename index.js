@@ -43,26 +43,20 @@
 
 // --------------------------------------------
 /*
-function highestFrequency(array) {
-  const map = {}
-  let maxFreq = 0
-  let maxFreqStr = array[0]
-
-  for (let i = 0; i < array.length; i++) {
-    const current = array[i]
-
-    if (map[current]) {
-      map[current]++
-    } else {
-      map[current] = 1
-    }
-
-    if (map[current] > maxFreq) {
-      maxFreq = map[current]
-      maxFreqStr = current
+function isStringRotated(source, test) {
+  if (source.length !== test.length) {
+    return false
+  }
+  
+  for (let i = 0; i < source.length; i++) {
+    const rotate = source.slice(i, source.length) + source.slice(0, i)
+  
+    if (rotate === test) {
+      return true
     }
   }
-
-  return maxFreqStr
+  
+  return false
+  //return source.length === test.length && (source + source).includes(test)
 }
 */
