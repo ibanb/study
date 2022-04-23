@@ -43,14 +43,29 @@
 
 // --------------------------------------------
 /*
-function allAnagrams(array) {
-  const sorted = array.map(str => str.split('').sort().join(''))
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+]
 
-  for (let i = 1; i < sorted.length; i++) {
-    if (sorted[i] !== sorted[0]) {
-      return false
+function rotate(source) {
+  const newMatrix = source[0].map(() => [])
+
+  for (let i = 0; i < source.length; i++) {
+    for (let j = 0; j < source[0].length; j++) {
+      newMatrix[j][source.length - 1 - i] = source[i][j]
     }
   }
-  return true
+
+  return newMatrix
+}
+
+function rotate180(source) {
+  return rotate(rotate(source))
+}
+
+function rotate270(source) {
+  return rotate180(rotate(source))
 }
 */
