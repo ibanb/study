@@ -43,29 +43,30 @@
 
 // --------------------------------------------
 /*
-const matrix = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9]
-]
+function deepEqual(a, b) {
+  if (Number.isNaN(a) && Number.isNaN(b)) {
+    return true
+  }
 
-function rotate(source) {
-  const newMatrix = source[0].map(() => [])
 
-  for (let i = 0; i < source.length; i++) {
-    for (let j = 0; j < source[0].length; j++) {
-      newMatrix[j][source.length - 1 - i] = source[i][j]
+  if (typeof a !== typeof b) {
+    return false
+  }
+
+  if (typeof a !== 'object' || a === null || b === null) {
+    return a === b
+  }
+
+  if (Object.keys(a).length !== Object.keys(b).length) {
+    return false
+  }
+
+  for (const key of Object.keys(a)) {
+    if (!deepEqual(a[key], b[key])) {
+      return false
     }
   }
 
-  return newMatrix
-}
-
-function rotate180(source) {
-  return rotate(rotate(source))
-}
-
-function rotate270(source) {
-  return rotate180(rotate(source))
+  return true
 }
 */
